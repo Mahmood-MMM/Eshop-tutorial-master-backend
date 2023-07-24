@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const connectDatabase = () => {
   mongoose
-    .connect("mongodb+srv://mahmoodna3n3:cstHO7bhqMkisEUr@cluster0.xdpgzxj.mongodb.net/?retryWrites=true&w=majority", {
+    .connect(process.env.DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
     .then((data) => {
-      console.log(`mongod connected with server: ${data.connection.host}`);
+      console.log(`mongoDB connected with server: ${data.connection.host}`);
     });
 };
 
